@@ -20,6 +20,7 @@ express()
     .use('/api/books', booksrouter)
     .use(express.static(path.join(__dirname, "./webpub")))
     .get("*", (_, res) => {
+        // Cette partie renvoi le site buildé dans le dossier webpub
         res.sendFile(
             path.join(__dirname, "./webpub/index.html")
         )

@@ -6,15 +6,16 @@ const BookList = () => {
     const navigate = useNavigate()
     const [books, setBooks] = useState([])
     const [userRole, setUserRole] = useState('')
+    const baseURL = import.meta.env.DEV ?"http://localhost:3000" : ""
 
     useEffect(() => {
-        fetch('/api/books', {
+        fetch(baseURL+'/api/books', {
             credentials: 'include'
         })
             .then(response => response.json())
             .then(data => setBooks(data))
             .catch(error => console.error('Erreur:', error))
-        fetch('/api/session', {
+        fetch(baseURL+'/api/session', {
             credentials: 'include'
         })
             .then(response => {

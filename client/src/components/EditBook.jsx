@@ -14,9 +14,10 @@ const EditBook = () => {
     });
     const [errors, setErrors] = useState([]);
     const [success, setSuccess] = useState(false);
+    const baseURL = import.meta.env.DEV ?"http://localhost:3000" : ""
 
     useEffect(() => {
-        fetch(`/api/books/${bookId}`, {
+        fetch(baseURL+`/api/books/${bookId}`, {
             credentials: 'include'
         })
             .then(response => response.json())
@@ -38,7 +39,7 @@ const EditBook = () => {
         setSuccess(false);
 
         try {
-            const response = await fetch(`/api/books/${bookId}`, {
+            const response = await fetch(baseURL+`/api/books/${bookId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

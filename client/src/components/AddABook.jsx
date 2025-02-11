@@ -14,7 +14,7 @@ const AddBook = () => {
         e.preventDefault()
         setErrors([])
         setSuccess(false)
-
+        const baseURL = import.meta.env.DEV ?"http://localhost:3000" : ""
         const bookData = {
             cover,
             title,
@@ -25,7 +25,7 @@ const AddBook = () => {
         }
 
         try {
-            const response = await fetch('/api/books', {
+            const response = await fetch(baseURL+'/api/books', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
