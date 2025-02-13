@@ -18,14 +18,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `library`
+-- Base de données : `library_test`
 --
-CREATE DATABASE IF NOT EXISTS library;
+CREATE DATABASE IF NOT EXISTS library_test;
 DROP USER IF EXISTS 'libr'@'%';
 CREATE USER 'libr'@'%' IDENTIFIED BY 'NIEN97BF21OZEFJOZEO';
-GRANT ALL PRIVILEGES ON library.* TO 'libr'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON library_test.* TO 'libr'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-USE library;
+USE library_test;
 -- --------------------------------------------------------
 
 --

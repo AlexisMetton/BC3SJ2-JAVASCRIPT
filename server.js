@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const booksrouter = require('./router/books')
+const authrouter = require('./router/auth')
 const cors = require('cors')
 const path = require('path')
 const cookieParser = require('cookie-parser')
@@ -18,6 +19,7 @@ express()
     .use(cors(corsOptions))
     .use(cookieParser())
     .use('/api/books', booksrouter)
+    .use('/api', authrouter)
     .use(express.static(path.join(__dirname, "./webpub")))
     .get("*", (_, res) => {
         // Cette partie renvoi le site buildé dans le dossier webpub

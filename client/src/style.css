@@ -248,3 +248,7 @@ p {
     display: block;
     margin: 0 auto; 
 }
+
+button {
+    background-color: #0056b3 !important;
+}
